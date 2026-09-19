@@ -3,8 +3,6 @@ export default function Home() {
     <main className="personal-page" id="home">
       <nav className="page-nav" aria-label="Page sections">
         <a href="#home">home</a>
-        <a href="#experiences">experiences</a>
-        <a href="#open-source">open source</a>
       </nav>
 
       <header className="intro">
@@ -15,18 +13,15 @@ export default function Home() {
         </p>
         <p>
           currently working on interpretability, interested in eval awareness
-          and model diffing
-        </p>
-        <p>
-          cautious as to prosaic alignment feasibility and potential
-          net-negative interpretability work
+          and model diffing (although cautious as to the feasibility of prosaic
+          alignment and potentially net-negative interp)
         </p>
         <p>also interested in agent foundations</p>
-        <p>i am a high schooler</p>
+        <p>i am currently in high schooler</p>
       </header>
 
-      <section id="experiences" aria-labelledby="experiences-heading">
-        <h2 id="experiences-heading">Experiences</h2>
+      <section id="past-work" aria-labelledby="past-work-heading">
+        <h2 id="past-work-heading">Past work</h2>
         <div className="experience">
           <div className="experience-heading">
             <h3>Algoverse Research</h3>
@@ -43,20 +38,23 @@ export default function Home() {
             <p className="dates">Sept 2026 - Ongoing</p>
           </div>
           <p>
-            Working with Stepan Shabalin on model diffing and conditional
-            behaviors
+            Researching model diffing and conditional behaviors with Stepan
+            Shabalin
           </p>
         </div>
       </section>
 
       <section id="open-source" aria-labelledby="open-source-heading">
-        <h2 id="open-source-heading">Open source work</h2>
+        <h2 id="open-source-heading">Open-source interpretability tooling</h2>
         <ul>
           <li>
-            Contributed a self-trained NLA and several J-lenses to Neuronpedia
+            Contributions include NLAs and J-lenses on{' '}
+            <a href="https://www.neuronpedia.org/qwen2.5-1.5b-it/nla">
+              Neuronpedia
+            </a>
           </li>
           <li>
-            In the works for EPDashboard: feature visualization tool similar to
+            In the works for EPDashboard, feature visualization tool similar to
             SAEDashboard
           </li>
         </ul>

@@ -1,6 +1,6 @@
 # Andy's personal website
 
-A minimal, single-page website with an introduction, experiences, open source work, and email/GitHub links. The design keeps Plain's narrow text layout with an italic serif greeting and a quiet contact footer.
+A minimal, single-page website with an introduction, past work, open-source interpretability tooling, and email/GitHub links. The design keeps Plain's narrow text layout with an upright serif greeting and a quiet contact footer.
 
 ## Content
 

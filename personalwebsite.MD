@@ -7,23 +7,20 @@ hi, im Andy
 
 hoping to make some positive impact in the world, and looking forward to improving my epistemics
 
-currently working on interpretability, interested in eval awareness and model diffing
-
-cautious as to prosaic alignment feasibility and potential net-negative interpretability work
+currently working on interpretability, interested in eval awareness and model diffing (although cautious as to the feasibility of prosaic alignment  and potentially net-negative interp)
 
 also interested in agent foundations
 
-i am a high schooler
+i am currently in high schooler
 
 
-Experiences
-
+Past work
 Algoverse Research June 2026 - Sept 2026
 - Worked with Melwina Albuquerque on investigating steering with J-lens directions
 
 Spar Fellow Sept 2026 - Ongoing
-- Working with Stepan Shabalin on model diffing and conditional behaviors
+- Researching model diffing and conditional behaviors with Stepan Shabalin
 
-Open source work
-- Contributed a self-trained NLA and several J-lenses to Neuronpedia
-- In the works for EPDashboard: feature visualization tool similar to SAEDashboard
+Open-source interpretability tooling
+- Contributions include NLAs and J-lenses on Neuronpedia https://www.neuronpedia.org/qwen2.5-1.5b-it/nla 
+- In the works for EPDashboard, feature visualization tool similar to SAEDashboard
