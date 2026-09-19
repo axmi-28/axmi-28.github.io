@@ -1,13 +1,17 @@
-# Personal website — design studies
+# Andy's personal website
 
-Four minimal directions built around the same placeholder content:
+A minimal, single-page website with an introduction, experiences, open source work, and email/GitHub links. The design keeps Plain's narrow text layout with an italic serif greeting and a quiet contact footer.
 
-- **Plain** — a narrow, text-first homepage, closest to the supplied reference.
-- **Margin** — serif typography, side labels, and a red asterisk.
-- **Index** — numbered rows, monospace metadata, and a blue accent.
-- **Letter** — a personal note with an italic sign-off.
+## Content
 
-Switch using the top tabs. Each direction also has a URL: `/?design=plain`, `/?design=margin`, `/?design=index`, or `/?design=letter`. Project and note titles expand to show sample content. All names, dates, descriptions, locations, and the example email address are placeholders.
+`personalwebsite.MD` contains the supplied material. Its wording is preserved in `app/page.tsx`; edits to the Markdown file are not automatically reflected on the page.
+
+- `app/page.tsx` — page content and semantic HTML
+- `app/globals.css` — typography, spacing, and responsive styles
+- `app/layout.tsx` — document metadata
+- `public/favicon.svg` — site icon
+
+The page is server-rendered with React and Vinext. There are no design selectors, client-side state, UI component libraries, external fonts, or analytics.
 
 ## Development
 
@@ -18,13 +22,11 @@ npm install
 npm run dev
 ```
 
+## Validation
+
 ```sh
 npm run build
 npx tsc --noEmit
 ```
 
-The site uses React and Vinext. The four page compositions and shared sample content live in `app/page.tsx`; their styles live in `app/globals.css`. The top comparison toolbar and design captions are for this design review and can be removed once a direction is chosen.
-
-Sites deployment configuration is in `.openai/hosting.json`. The design study is private, and metadata requests that search engines do not index it. There are no analytics, remote fonts, or external image dependencies.
-
-Reference: https://www.johnnylin.co/
+Sites configuration lives in `.openai/hosting.json`. The hosted site remains private, and its metadata requests that search engines do not index it.
