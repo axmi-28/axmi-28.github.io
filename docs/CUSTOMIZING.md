@@ -6,7 +6,7 @@ The current v1 release keeps the shared layouts, styles, and features in Ruby pa
 
 ## This site's starting design
 
-The homepage keeps your words intact. It uses a Source Serif 4 greeting, DM Sans body text, a 760px outer column, blue links, subtle dividers, and matching light/dark palettes. The header links directly to your work and open-source sections. There are no invented affiliations, sample papers, stock headshots, placeholder CVs, or empty blog pages.
+The homepage keeps your words intact. It uses compact DM Sans typography, an 880px outer column, blue links, and matching light/dark palettes. Contact links sit beneath the greeting. Work and open-source sections use a two-column layout on larger screens, with section headings on the left and plain-text entries on the right. Role names and dates share a line when space allows; sections stack on mobile. The header links directly to your work and open-source sections. There are no invented affiliations, sample papers, stock headshots, placeholder CVs, or empty blog pages.
 
 The fonts and icon stylesheet load from Google Fonts and jsDelivr. System fonts are included as fallbacks. The theme switch stores only a theme preference in the visitor's browser; analytics and comments are disabled.
 
