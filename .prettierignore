@@ -1,0 +1,13 @@
+_site/
+vendor/
+node_modules/
+.bundle/
+.jekyll-cache/
+.openai/
+.al-folio-overrides.yml
+al-folio-upgrade-report.md
+me.MD
+personalwebsite.MD
+_pages/about.md
+Gemfile.lock
+LICENSE

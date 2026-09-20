@@ -1,0 +1,6 @@
+{
+  "plugins": ["@shopify/prettier-plugin-liquid"],
+  "printWidth": 120,
+  "proseWrap": "preserve",
+  "trailingComma": "es5"
+}

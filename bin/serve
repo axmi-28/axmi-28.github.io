@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+# Prefer the Ruby installed for this project over macOS's system Ruby.
+if command -v brew >/dev/null 2>&1; then
+  ruby_prefix="$(brew --prefix ruby@3.3 2>/dev/null || true)"
+  if [[ -x "$ruby_prefix/bin/ruby" ]]; then
+    export PATH="$ruby_prefix/bin:$PATH"
+  fi
+fi
+
+bundle check >/dev/null || bundle install
+exec bundle exec jekyll serve --host 127.0.0.1 --port 4000 --livereload "$@"
