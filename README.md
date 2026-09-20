@@ -12,7 +12,7 @@ Ruby 3.3.12 and the gems have been installed on the Mac used for setup. From thi
 ./bin/serve
 ```
 
-Open **http://127.0.0.1:4000/andys-website/**. Keep that terminal open; press Ctrl+C to stop. Content and CSS edits rebuild automatically. Restart after changing `_config.yml`.
+Open **http://127.0.0.1:4000/**. Keep that terminal open; press Ctrl+C to stop. Content and CSS edits rebuild automatically. Restart after changing `_config.yml`.
 
 On another Mac, install the prerequisites first:
 
@@ -42,29 +42,40 @@ On other platforms, install Ruby 3.3 and Node.js 22 or newer, then run the same 
 
 See [docs/CUSTOMIZING.md](docs/CUSTOMIZING.md) for how to make the site more distinctive or add pages, writing, projects, and publications.
 
-## Commit and push this setup
+## GitHub Pages at your personal address
 
-This working directory already has the existing repository's Git history, a `main` branch, and `origin` set to `https://github.com/axmi-28/andys-website.git`. The conversion is uncommitted. **No `git init`, extra remote, force-push, or replacement repository is needed.**
+The site is configured for **https://axmi-28.github.io/**. Visiting **https://axmi-28.github.io/index.html** serves the same homepage. A root user site requires a repository named **`axmi-28.github.io`**, with these settings:
 
-Before the first push, open the repository's [Pages settings](https://github.com/axmi-28/andys-website/settings/pages) and select **Build and deployment → Source → GitHub Actions**.
+```yaml
+url: https://axmi-28.github.io
+baseurl: ""
+```
+
+The original deployment from `andys-website` built successfully but failed in the deploy job because Pages was not enabled. The original repository is private and the account uses GitHub Free; Pages on that plan requires a public repository.
+
+### Repository and deployment
+
+The repository has been renamed to **[axmi-28/axmi-28.github.io](https://github.com/axmi-28/axmi-28.github.io)** and made public with Andy's approval. The existing Git history is preserved, and the local `origin` points to the new URL. The earlier `andys-website` repository URL redirects to the renamed repository.
+
+The [Pages publishing source](https://github.com/axmi-28/axmi-28.github.io/settings/pages) is **GitHub Actions**. Do not switch to branch-based Jekyll publishing; this al-folio setup needs its custom build workflow. No custom domain, paid host, or additional repository secret is needed.
+
+Watch the [Actions tab](https://github.com/axmi-28/axmi-28.github.io/actions) after pushing changes. The workflow builds pull requests without deploying and publishes pushes to `main`. Share **https://axmi-28.github.io/** after a successful deployment.
+
+Dependencies, generated output, and local `me.MD` notes remain ignored by Git. The older tracked `personalwebsite.MD` remains in the public repository and its history but is excluded from the generated website.
+
+### Future updates
+
+Edit your homepage or styles, preview locally with `./bin/serve`, and then:
 
 ```bash
-cd "/Users/andyxu/Documents/alfolio website"
-git status
-git diff --stat
 git add -A
-git diff --cached --stat
-git commit -m "Adapt al-folio for Andy's personal website"
+git commit -m "Update personal website"
 git push origin main
 ```
 
-`git add -A` includes the new Jekyll files and the removal of the previous Vinext/React implementation. That older implementation remains in Git history. Dependencies, generated site output, and local notes are ignored.
+GitHub Actions rebuilds and publishes the update automatically. If GitHub has newer commits and rejects a push, run `git pull --rebase origin main`, resolve any reported conflicts, and retry. Do not force-push.
 
-If GitHub has acquired newer commits since setup and rejects the push, run `git pull --rebase origin main`, resolve any reported conflicts, and retry `git push origin main`. Do not force-push.
-
-After a successful push, check the [Actions tab](https://github.com/axmi-28/andys-website/actions). The workflow builds pull requests without deploying, and deploys pushes to `main`. The expected public URL is **https://axmi-28.github.io/andys-website/** once Pages is enabled and deployment succeeds. No personal access token needs to be added as a repository secret; the workflow uses GitHub's built-in token.
-
-The existing `.openai/hosting.json` is retained from the previous site. This migration targets GitHub Pages; it has not changed or redeployed the earlier Sites deployment, and that metadata is excluded from Jekyll output.
+The existing `.openai/hosting.json` is retained from the earlier site and excluded from Jekyll output. GitHub Pages is this site's deployment target; the earlier Sites deployment is not involved.
 
 ## Validate changes
 

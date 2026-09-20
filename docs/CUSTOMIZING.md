@@ -40,7 +40,7 @@ The custom header discovers `nav: true` pages automatically. Use `layout: page` 
 [Research]({{ '/research/' | relative_url }})
 ```
 
-Do not hardcode `/research/` when the site lives under `/andys-website/`.
+Keep using `relative_url` even at the domain root so internal links continue to work if the hosting path changes.
 
 ## Add writing, projects, publications, or a CV
 
@@ -54,14 +54,14 @@ The [upstream customization guide](https://github.com/alshedivat/al-folio/blob/m
 
 ## Custom domain
 
-With this repository name, GitHub Pages uses:
+The `axmi-28.github.io` user-site repository serves the site at the domain root:
 
 ```yaml
 url: https://axmi-28.github.io
-baseurl: /andys-website
+baseurl: ""
 ```
 
-For a custom domain, set `url` to that domain and `baseurl: ""`, configure the domain and DNS in GitHub Pages, and rebuild. If you instead rename the repository to `axmi-28.github.io`, keep the GitHub URL but set `baseurl: ""`.
+The public homepage is `https://axmi-28.github.io/`; `/index.html` reaches the same page. There is no `/andys-website/` prefix. For a custom domain later, change `url`, keep `baseurl: ""`, configure the domain and DNS in GitHub Pages, and rebuild.
 
 ## Keeping al-folio up to date
 
