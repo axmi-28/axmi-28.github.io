@@ -6,9 +6,9 @@ The current v1 release keeps the shared layouts, styles, and features in Ruby pa
 
 ## This site's starting design
 
-The homepage keeps your words intact. It uses compact DM Sans typography, an 880px outer column, blue links, and matching light/dark palettes. Contact links sit beneath the greeting. Work and open-source sections use a two-column layout on larger screens, with section headings on the left and plain-text entries on the right. Role names and dates share a line when space allows; sections stack on mobile. The header links directly to your work and open-source sections. There are no invented affiliations, sample papers, stock headshots, placeholder CVs, or empty blog pages.
+The homepage keeps your words intact. It uses compact DM Sans typography, an 880px outer column, blue links, and matching light/dark palettes. Contact links sit beneath the greeting. All experience, including open-source interpretability tooling, sits under Past work. The heading sits beside the entries on larger screens and above them on mobile. Role names and dates share a line when space allows. There is no top navigation bar or section divider; a standalone theme button sits beside the greeting. There are no invented affiliations, sample papers, stock headshots, placeholder CVs, or empty blog pages.
 
-The fonts and icon stylesheet load from Google Fonts and jsDelivr. System fonts are included as fallbacks. The theme switch stores only a theme preference in the visitor's browser; analytics and comments are disabled.
+The fonts and icon stylesheet load from Google Fonts and jsDelivr. System fonts are included as fallbacks. The theme button switches directly between light and dark in one click and stores that preference in the visitor's browser. Before a visitor makes a choice, the site follows their system preference. Analytics and comments are disabled.
 
 ## Three levels of customization
 
@@ -27,14 +27,12 @@ Create `_pages/research.md`:
 layout: home
 title: Research
 permalink: /research/
-nav: true
-nav_order: 1
 ---
 
 Your research page content goes here.
 ```
 
-The custom header discovers `nav: true` pages automatically. Use `layout: page` for al-folio's standard page structure instead. For internal links, use Jekyll's baseurl-aware filter:
+Link to new pages from your homepage content; this site has no top navigation bar. The `home` layout provides the content anchor used by the skip link. For internal links, use Jekyll's baseurl-aware filter:
 
 ```liquid
 [Research]({{ '/research/' | relative_url }})
@@ -67,8 +65,8 @@ The public homepage is `https://axmi-28.github.io/`; `/index.html` reaches the s
 
 Dependency versions are locked. Upgrade deliberately, then run the production build and upgrade audits from the README. Two files intentionally override `al_folio_core`:
 
-- `_includes/head.liquid`: upstream head plus the custom stylesheet link.
-- `_includes/header.liquid`: this site's compact navigation, preserving al-folio's theme-toggle IDs.
+- `_includes/head.liquid`: upstream head plus the custom stylesheet and one-click theme script.
+- `_includes/header.liquid`: the skip link and standalone theme button, preserving al-folio's `light-toggle` ID.
 
 `.al-folio-overrides.yml` records the versions and checksums you reviewed. After a gem update:
 
@@ -85,4 +83,4 @@ bundle exec al-folio upgrade overrides accept _includes/head.liquid
 bundle exec al-folio upgrade overrides accept _includes/header.liquid
 ```
 
-`_layouts/home.liquid` and `assets/css/custom.css` are new site-owned files, so they do not shadow upstream files. Keeping custom changes concentrated here makes future updates easier than rewriting the entire core.
+`_layouts/home.liquid`, `assets/css/custom.css`, and `assets/js/theme-toggle.js` are new site-owned files, so they do not shadow upstream files. Keeping custom changes concentrated here makes future updates easier than rewriting the entire core.

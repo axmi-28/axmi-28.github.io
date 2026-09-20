@@ -1,6 +1,6 @@
 # Andy's website
 
-A personal site built with the real [al-folio](https://github.com/alshedivat/al-folio) v1 Jekyll starter and its pinned `al_folio_core` runtime. It includes a custom homepage, light/dark/system themes, responsive navigation, contact links, metadata, a sitemap, and a 404 page.
+A personal site built with the real [al-folio](https://github.com/alshedivat/al-folio) v1 Jekyll starter and its pinned `al_folio_core` runtime. It includes a custom homepage, one-click light/dark themes, a compact responsive layout, contact links, metadata, a sitemap, and a 404 page.
 
 The content in `_pages/about.md` preserves the wording supplied in `me.MD`, including capitalization, grammar, and visible URLs. Only formatting has changed. The local notes file is untouched, ignored by Git, and excluded from the public site. The older `personalwebsite.MD` is retained from the existing repository as a reference and is also excluded from the public site.
 
@@ -34,7 +34,7 @@ On other platforms, install Ruby 3.3 and Node.js 22 or newer, then run the same 
 | `_config.yml`                  | Site title, URL, feature switches, fonts, and width  |
 | `_data/socials.yml`            | Email address and GitHub username                    |
 | `assets/css/custom.css`        | Colors, typography, spacing, and mobile styling      |
-| `_includes/header.liquid`      | Navigation and the native al-folio theme switch      |
+| `_includes/header.liquid`      | Skip link and standalone light/dark button           |
 | `_layouts/home.liquid`         | Homepage structure, inside al-folio's default layout |
 | `_includes/head.liquid`        | al-folio's head, with the custom stylesheet appended |
 | `Gemfile` and `Gemfile.lock`   | Versioned al-folio/Jekyll dependencies               |

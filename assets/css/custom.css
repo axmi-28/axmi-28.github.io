@@ -40,49 +40,10 @@ body {
   padding-inline: 1.5rem;
 }
 
-.site-header {
-  border-bottom: 1px solid var(--global-divider-color);
-}
-
-.site-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem 1.5rem;
-  min-height: 3.75rem;
-  padding-block: 0.25rem;
-}
-
-.site-name {
-  color: var(--global-text-color);
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: -0.045em;
-}
-
-.site-name span {
-  color: var(--global-theme-color);
-}
-
-.site-nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem 1.4rem;
-  font-size: 0.875rem;
-}
-
-.site-nav-links a {
-  color: var(--global-text-color-light);
-  padding-block: 0.65rem;
-}
-
-.site-nav-links a:hover {
-  color: var(--global-theme-color);
-}
-
 #light-toggle {
+  position: absolute;
+  top: 2.5rem;
+  right: max(1.5rem, calc((100% - var(--max-content-width)) / 2 + 1.5rem));
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -96,12 +57,25 @@ body {
   font-size: 1rem;
 }
 
+#light-toggle .theme-icon-light {
+  display: none;
+}
+
+html[data-theme="dark"] #light-toggle .theme-icon-light {
+  display: inline-block;
+}
+
+html[data-theme="dark"] #light-toggle .theme-icon-dark {
+  display: none;
+}
+
 [role="main"].container {
   margin-top: 2.5rem !important;
   margin-bottom: 2.5rem;
 }
 
 .post-header {
+  padding-right: 3.5rem;
   margin-bottom: 1.3rem;
 }
 
@@ -133,9 +107,7 @@ body {
   display: grid;
   grid-template-columns: 10.5rem minmax(0, 1fr);
   gap: 1.75rem;
-  padding-top: 1.2rem;
   margin-top: 1.2rem;
-  border-top: 1px solid var(--global-divider-color);
 }
 
 .profile-section h2 {
@@ -235,8 +207,9 @@ button:focus-visible {
     padding-inline: 1.25rem;
   }
 
-  .site-nav-links {
-    gap: 0.35rem 0.75rem;
+  #light-toggle {
+    top: 1.75rem;
+    right: 1.25rem;
   }
 
   [role="main"].container {

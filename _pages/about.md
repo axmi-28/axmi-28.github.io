@@ -34,13 +34,12 @@ i am currently in high schooler
       </div>
       <p>Researching model diffing and conditional behaviors with <a href="https://www.linkedin.com/in/sshlin/">https://www.linkedin.com/in/sshlin/</a></p>
     </div>
-  </div>
-</section>
-
-<section class="profile-section" aria-labelledby="open-source-interpretability-tooling">
-  <h2 id="open-source-interpretability-tooling">Open-source interpretability tooling</h2>
-  <div class="section-content">
-    <p>Contributions include NLAs and J-lenses on Neuronpedia <a href="https://www.neuronpedia.org/qwen2.5-1.5b-it/nla">https://www.neuronpedia.org/qwen2.5-1.5b-it/nla</a></p>
-    <p>In the works for EPDashboard, feature visualization tool similar to SAEDashboard</p>
+    <div class="work-entry">
+      <div class="work-heading">
+        <h3 id="open-source-interpretability-tooling">Open-source interpretability tooling</h3>
+      </div>
+      <p>Contributions include NLAs and J-lenses on Neuronpedia <a href="https://www.neuronpedia.org/qwen2.5-1.5b-it/nla">https://www.neuronpedia.org/qwen2.5-1.5b-it/nla</a></p>
+      <p>In the works for EPDashboard, feature visualization tool similar to SAEDashboard</p>
+    </div>
   </div>
 </section>
