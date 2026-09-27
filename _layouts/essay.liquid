@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="post essay">
+  <header class="post-header">
+    <a class="back-link" href="{{ '/blog/' | relative_url }}">&larr; Blog</a>
+    <h1 class="post-title" id="main-content" tabindex="-1">{{ page.title | escape }}</h1>
+    <div class="essay-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+      {% if page.pdf %}
+        <a href="{{ page.pdf | relative_url }}">Read the PDF &rarr;</a>
+      {% endif %}
+    </div>
+    {% if page.description %}
+      <p class="page-description">{{ page.description | escape }}</p>
+    {% endif %}
+  </header>
+  <article class="essay-body">
+    {{ content }}
+  </article>
+  <a class="essay-back" href="{{ '/blog/' | relative_url }}">&larr; All writing</a>
+</div>

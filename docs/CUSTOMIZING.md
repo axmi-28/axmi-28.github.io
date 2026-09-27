@@ -6,7 +6,7 @@ The current v1 release keeps the shared layouts, styles, and features in Ruby pa
 
 ## This site's starting design
 
-The homepage keeps your words intact. It uses compact DM Sans typography, an 880px outer column, blue links, and matching light/dark palettes. Contact links sit beneath the greeting. All experience, including open-source interpretability tooling, sits under Past work. The heading sits beside the entries on larger screens and above them on mobile. Role names and dates share a line when space allows. There is no top navigation bar or section divider; a standalone theme button sits beside the greeting. There are no invented affiliations, sample papers, stock headshots, placeholder CVs, or empty blog pages.
+The homepage keeps your words intact. It uses compact DM Sans typography, an 880px outer column, a cream background, warm brown text, and burnt-orange links. Dark mode uses an espresso background with parchment text and apricot links. Essay titles use a serif face, with a comfortable line height for long reading. The blog link and contact details sit beneath the greeting. All experience, including open-source interpretability tooling, sits under Past work. The heading sits beside the entries on larger screens and above them on mobile. Role names and dates share a line when space allows. There is no top navigation bar or section divider; a standalone theme button sits beside the greeting. There are no invented affiliations, sample papers, stock headshots, or placeholder CVs.
 
 The fonts and icon stylesheet load from Google Fonts and jsDelivr. System fonts are included as fallbacks. The theme button switches directly between light and dark in one click and stores that preference in the visitor's browser. Before a visitor makes a choice, the site follows their system preference. Analytics and comments are disabled.
 
@@ -42,7 +42,7 @@ Keep using `relative_url` even at the domain root so internal links continue to 
 
 ## Add writing, projects, publications, or a CV
 
-- **Writing:** add Markdown files under `_posts/` using `YYYY-MM-DD-title.md` filenames and `layout: post`. Add a blog index page when you have posts to show. Enable pagination or search only if useful.
+- **Writing:** the blog index and `essay` layout are already set up. Add `_posts/YYYY-MM-DD-title.md` files using the template in `docs/templates/essay.md`. See [WRITING.md](WRITING.md) for publishing, PDFs, and draft previews.
 - **Projects:** add `_projects/` entries and a project index page. The projects collection is already configured.
 - **Publications:** add your own BibTeX to `_bibliography/papers.bib`, then create a page with `{% bibliography %}`. The bibliography plugins are installed; the example papers were omitted.
 - **CV:** supply your CV data and a `layout: cv` page, then enable `al_folio.features.cv.enabled` in `_config.yml`. No CV content has been fabricated.

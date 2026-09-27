@@ -1,6 +1,6 @@
 # Andy's website
 
-A personal site built with the real [al-folio](https://github.com/alshedivat/al-folio) v1 Jekyll starter and its pinned `al_folio_core` runtime. It includes a custom homepage, one-click light/dark themes, a compact responsive layout, contact links, metadata, a sitemap, and a 404 page.
+A personal site built with the real [al-folio](https://github.com/alshedivat/al-folio) v1 Jekyll starter and its pinned `al_folio_core` runtime. It includes a warm, compact homepage, a blog for essays and notes, one-click light/dark themes, contact links, metadata, a sitemap, and a 404 page.
 
 The content in `_pages/about.md` preserves the wording supplied in `me.MD`, including capitalization, grammar, and visible URLs. Only formatting has changed. The local notes file is untouched, ignored by Git, and excluded from the public site. The older `personalwebsite.MD` is retained from the existing repository as a reference and is also excluded from the public site.
 
@@ -31,6 +31,9 @@ On other platforms, install Ruby 3.3 and Node.js 22 or newer, then run the same 
 | File                           | Purpose                                              |
 | ------------------------------ | ---------------------------------------------------- |
 | `_pages/about.md`              | Homepage text, experience, and open-source work      |
+| `_posts/`                      | Your dated Markdown essays                           |
+| `_pages/blog.html`             | Blog index; lists published essays automatically     |
+| `_layouts/essay.liquid`        | Article layout and optional PDF link                 |
 | `_config.yml`                  | Site title, URL, feature switches, fonts, and width  |
 | `_data/socials.yml`            | Email address and GitHub username                    |
 | `assets/css/custom.css`        | Colors, typography, spacing, and mobile styling      |
@@ -41,6 +44,12 @@ On other platforms, install Ruby 3.3 and Node.js 22 or newer, then run the same 
 | `.github/workflows/deploy.yml` | Build validation and GitHub Pages deployment         |
 
 See [docs/CUSTOMIZING.md](docs/CUSTOMIZING.md) for how to make the site more distinctive or add pages, writing, projects, and publications.
+
+## Publish writing
+
+The blog is at **https://axmi-28.github.io/blog/**. Copy `docs/templates/essay.md` into `_posts/YYYY-MM-DD-short-title.md`, replace its title and text, and change `published: false` to `published: true` when ready. Commit and push to publish; the index updates automatically. You can also upload PDFs and link them from a post.
+
+See **[docs/WRITING.md](docs/WRITING.md)** for the complete local/GitHub workflow, Markdown examples, PDF uploads, and draft previews. The live blog is intentionally empty until you publish your first essay.
 
 ## GitHub Pages at your personal address
 

@@ -1,0 +1,29 @@
+---
+layout: home
+title: Blog
+description: Essays and notes.
+permalink: /blog/index.html
+back_url: /
+back_label: Home
+---
+
+{% assign writings = site.posts | sort: 'date' | reverse %}
+<div class="writing-index">
+  {% for post in writings %}
+  <article class="writing-entry">
+    <time class="writing-date" datetime="{{ post.date | date_to_xmlschema }}">
+      {{- post.date | date: '%b %-d, %Y' -}}
+    </time>
+    <div>
+      <h2>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </h2>
+      {% if post.description %}
+      <p>{{ post.description | strip_html | escape }}</p>
+      {% endif %}
+    </div>
+  </article>
+  {% else %}
+  <p class="writing-empty">No essays published yet.</p>
+  {% endfor %}
+</div>
