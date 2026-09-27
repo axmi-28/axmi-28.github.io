@@ -7,9 +7,9 @@ nav: false
 
 <div class="intro" markdown="1">
 
-hoping to make some positive impact in the world, and looking forward to improving my epistemics
+hoping to make some positive impact in the world,looking to improve my epistemics
 
-currently working on interpretability, interested in eval awareness and model diffing (although cautious as to the feasibility of prosaic alignment  and potentially net-negative interp)
+currently working on interpretability, interested in stuff like grader awareness and model diffing
 
 also interested in agent foundations
 
@@ -32,7 +32,7 @@ i am currently in high schooler
         <h3>SPAR Fellow</h3>
         <p class="work-dates">Sept 2026 - Ongoing</p>
       </div>
-      <p>Researching model diffing and conditional behaviors with <a href="https://www.linkedin.com/in/sshlin/">https://www.linkedin.com/in/sshlin/</a></p>
+      <p>Researching model diffing and conditional behaviors with Stepan Shabalin</p>
     </div>
     <div class="work-entry">
       <div class="work-heading">
