@@ -5,6 +5,24 @@
     <a href="{{ '/feed.xml' | relative_url }}">RSS ↗</a>
   </div>
   {% if writings.size > 0 %}
+    <nav class="writing-index" aria-label="Writings navigation">
+      <ol>
+        {% for post in writings %}
+          <li class="writing-entry">
+            <time class="writing-date" datetime="{{ post.date | date_to_xmlschema }}">
+              {{- post.date | date: '%b %-d, %Y' -}}
+            </time>
+            <a href="#writing-{{ post.slug }}">
+              {%- if post.kind == 'note' -%}
+                Brief note · {{ post.date | date: '%-I:%M %p' }}
+              {%- else -%}
+                {{ post.title | escape }}
+              {%- endif -%}
+            </a>
+          </li>
+        {% endfor %}
+      </ol>
+    </nav>
     {% for post in writings %}
       <article
         class="writing-article{% if post.kind == 'note' %} writing-note{% endif %}"

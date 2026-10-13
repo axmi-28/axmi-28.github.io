@@ -1,6 +1,6 @@
 # Publishing essays and notes
 
-Your writing lives below your bio at **https://axmi-28.github.io/#writing**. Articles unfold in full as visitors scroll, newest first. Each entry has a separate page and links to move between older or newer writings. Brief notes share the same stream.
+Your writing lives below your bio at **https://axmi-28.github.io/#writing**. Articles unfold in full as visitors scroll, newest first. The dated navigation list jumps directly to each entry, with no extra heading above it. Each entry has a separate page and links to move between older or newer writings. Brief notes share the same stream.
 
 ## Write an essay locally
 

@@ -47,7 +47,7 @@ See [docs/CUSTOMIZING.md](docs/CUSTOMIZING.md) for how to make the site more dis
 
 ## Publish writing
 
-Writing unfolds on the homepage at **https://axmi-28.github.io/#writing**, newest first, with individual article and note pages. Copy `docs/templates/essay.md` into `_posts/YYYY-MM-DD-short-title.md`, replace its title and text, and change `published: false` to `published: true` when ready. Commit and push to publish; the homepage updates automatically. You can also upload PDFs and link them from a post.
+Writing unfolds on the homepage at **https://axmi-28.github.io/#writing**, newest first, with a jump-to-entry list and individual article and note pages. Copy `docs/templates/essay.md` into `_posts/YYYY-MM-DD-short-title.md`, replace its title and text, and change `published: false` to `published: true` when ready. Commit and push to publish; the homepage updates automatically. You can also upload PDFs and link them from a post.
 
 See **[docs/WRITING.md](docs/WRITING.md)** for the complete local/GitHub workflow, Markdown examples, PDF uploads, and draft previews. The three published articles and three brief notes from Andy’s Substack have been imported with their original publication timestamps, formatting, and images. See [docs/SUBSTACK-IMPORT.md](docs/SUBSTACK-IMPORT.md) for the source inventory.
 
