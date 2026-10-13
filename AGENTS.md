@@ -1,7 +1,7 @@
 # Andy's personal al-folio site
 
 - This is a user's customized site, not the upstream al-folio starter. Local layout/include/style customizations are intentional and supported.
-- Preserve the exact wording in `_pages/about.md` unless Andy requests text edits. `me.MD` is the original local reference; do not modify it or publish raw notes.
+- `me.MD` is the ongoing source of truth for homepage text. On future site updates, read its latest contents and sync the material marked for the personal website into `_pages/about.md` word for word, changing only formatting. Andy has given standing authorization for this sync; do not rewrite the wording independently. Do not modify `me.MD` or publish its raw notes or instructions.
 - The GitHub Pages repository is `axmi-28/axmi-28.github.io`; its production URL is `https://axmi-28.github.io` and its baseurl is empty (`""`). Use `relative_url` for internal URLs.
 - Content lives in `_pages/`; site styling lives in `assets/css/custom.css`. Keep gem-managed source under `vendor/` unchanged.
 - `Gemfile` and `_config.yml` must agree on enabled plugin dependencies.

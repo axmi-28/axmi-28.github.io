@@ -14,7 +14,6 @@ layout: default
     {% endif %}
     {% if page.permalink == '/' %}
       <div class="contact-links" aria-label="Contact">
-        <a class="writing-link" href="{{ '/blog/' | relative_url }}">blog</a>
         <a href="mailto:{{ site.data.socials.email }}">{{ site.data.socials.email }}</a>
         <a href="https://github.com/{{ site.data.socials.github_username }}"
           >github / {{ site.data.socials.github_username -}}
@@ -23,4 +22,7 @@ layout: default
     {% endif %}
   </header>
   <article>{{ content }}</article>
+  {% if page.permalink == '/' %}
+    {% include writing.liquid %}
+  {% endif %}
 </div>

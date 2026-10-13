@@ -35,15 +35,10 @@ html[data-theme="dark"] {
 }
 
 body {
-  font-family:
-    "DM Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-  font-size: 1rem;
+  font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-size: 1.125rem;
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -98,7 +93,7 @@ html[data-theme="dark"] #light-toggle .theme-icon-dark {
   font-weight: 400;
   font-size: clamp(2rem, 5vw, 2.5rem);
   line-height: 1.2;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 .post p {
@@ -185,10 +180,6 @@ footer a:hover {
   font-size: 0.875rem;
 }
 
-.writing-link {
-  font-weight: 600;
-}
-
 .back-link {
   display: inline-block;
   margin-bottom: 0.6rem;
@@ -202,43 +193,80 @@ footer a:hover {
   color: var(--global-text-color-light);
 }
 
-.writing-index {
-  margin-top: 1.5rem;
+.home-writing {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--global-divider-color);
 }
 
-.writing-entry {
-  display: grid;
-  grid-template-columns: 7rem minmax(0, 1fr);
-  gap: 0.3rem 1.5rem;
-  margin-bottom: 1.25rem;
+.writing-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.writing-date,
+.writing-heading h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.writing-heading > a {
+  font-size: 0.875rem;
+}
+
+.writing-article {
+  margin-top: 2.75rem;
+}
+
+.writing-article + .writing-article {
+  padding-top: 2rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.writing-title {
+  margin: 0.45rem 0 1.25rem;
+  font-family: inherit;
+  font-size: clamp(1.65rem, 4vw, 2rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+
+#writing,
+.writing-article {
+  scroll-margin-top: 1.5rem;
+}
+
+.writing-article-nav,
+.essay-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.75rem;
+  font-size: 0.875rem;
+}
+
+.writing-article-nav a:last-child {
+  max-width: 65%;
+}
+
 .essay-meta {
   color: var(--global-text-color-light);
   font-size: 0.875rem;
   font-variant-numeric: tabular-nums;
 }
 
-.writing-date {
-  padding-top: 0.2rem;
-}
-
-.writing-entry h2 {
-  margin: 0 0 0.25rem;
-  font-size: 1.125rem;
-  line-height: 1.4;
-  font-weight: 500;
-  overflow-wrap: anywhere;
-}
-
-.writing-entry p,
 .writing-empty {
   color: var(--global-text-color-light);
 }
 
 .essay .post-title {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: inherit;
   font-weight: 400;
   letter-spacing: -0.025em;
   overflow-wrap: anywhere;
@@ -253,7 +281,7 @@ footer a:hover {
 
 .essay-body {
   max-width: 72ch;
-  line-height: 1.7;
+  line-height: 1.6;
   overflow-wrap: break-word;
 }
 
@@ -268,7 +296,8 @@ footer a:hover {
   font-weight: 500;
 }
 
-.essay-body h3 {
+.essay-body h3,
+.essay-body h4 {
   margin: 1.3rem 0 0.5rem;
   font-size: 1.125rem;
   font-weight: 600;
@@ -278,6 +307,24 @@ footer a:hover {
 .essay-body video {
   max-width: 100%;
   height: auto;
+}
+
+.essay-body figure {
+  margin: 1.5rem 0;
+}
+
+.essay-body figure img {
+  display: block;
+  max-height: 26rem;
+  width: auto;
+  margin-inline: auto;
+}
+
+.essay-body figcaption {
+  margin-top: 0.5rem;
+  color: var(--global-text-color-light);
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .essay-body pre {
@@ -295,7 +342,14 @@ footer a:hover {
   padding: 0.25rem 1rem;
   margin: 1rem 0;
   background: var(--global-code-bg-color);
-  font-size: 1rem;
+  font-size: inherit;
+}
+
+.writing-note .writing-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  font-style: italic;
+  letter-spacing: 0;
 }
 
 .essay-back {
@@ -363,9 +417,18 @@ button:focus-visible {
     justify-content: flex-start;
   }
 
-  .writing-entry {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.2rem;
+  .home-writing {
+    margin-top: 2.5rem;
+  }
+
+  .writing-article-nav a:last-child {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.25rem;
   }
 }
 

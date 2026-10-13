@@ -6,9 +6,9 @@ The current v1 release keeps the shared layouts, styles, and features in Ruby pa
 
 ## This site's starting design
 
-The homepage keeps your words intact. It uses compact DM Sans typography, an 880px outer column, a cream background, warm brown text, and burnt-orange links. Dark mode uses an espresso background with parchment text and apricot links. Essay titles use a serif face, with a comfortable line height for long reading. The blog link and contact details sit beneath the greeting. All experience, including open-source interpretability tooling, sits under Past work. The heading sits beside the entries on larger screens and above them on mobile. Role names and dates share a line when space allows. There is no top navigation bar or section divider; a standalone theme button sits beside the greeting. There are no invented affiliations, sample papers, stock headshots, or placeholder CVs.
+The homepage keeps your words intact. It uses Georgia typography with Palatino and Times fallbacks, inspired by [Michael Nielsen’s notebook](https://michaelnotebook.com/), an 880px outer column, a cream background, warm brown text, and burnt-orange links. Dark mode uses an espresso background with parchment text and apricot links. Essay titles use a serif face, with a comfortable line height for long reading. Contact details sit beneath the greeting. Past work uses the exact paragraph from `me.MD`. Writing follows the bio in a newest-first reading stream, with per-entry navigation and compact headings for brief notes. The heading sits beside the entries on larger screens and above them on mobile. There is no top navigation bar; a standalone theme button sits beside the greeting. There are no invented affiliations, sample papers, stock headshots, or placeholder CVs.
 
-The fonts and icon stylesheet load from Google Fonts and jsDelivr. System fonts are included as fallbacks. The theme button switches directly between light and dark in one click and stores that preference in the visitor's browser. Before a visitor makes a choice, the site follows their system preference. Analytics and comments are disabled.
+The serif fonts are installed locally on the reader’s device, so there is no web-font download. The icon stylesheet loads from jsDelivr. The theme button switches directly between light and dark in one click and stores that preference in the visitor's browser. Before a visitor makes a choice, the site follows their system preference. Analytics and comments are disabled.
 
 ## Three levels of customization
 
@@ -42,7 +42,7 @@ Keep using `relative_url` even at the domain root so internal links continue to 
 
 ## Add writing, projects, publications, or a CV
 
-- **Writing:** the blog index and `essay` layout are already set up. Add `_posts/YYYY-MM-DD-title.md` files using the template in `docs/templates/essay.md`. See [WRITING.md](WRITING.md) for publishing, PDFs, and draft previews.
+- **Writing:** the homepage writing section and `essay` layout are already set up. Add `_posts/YYYY-MM-DD-title.md` files using the template in `docs/templates/essay.md`. See [WRITING.md](WRITING.md) for publishing, PDFs, and draft previews.
 - **Projects:** add `_projects/` entries and a project index page. The projects collection is already configured.
 - **Publications:** add your own BibTeX to `_bibliography/papers.bib`, then create a page with `{% bibliography %}`. The bibliography plugins are installed; the example papers were omitted.
 - **CV:** supply your CV data and a `layout: cv` page, then enable `al_folio.features.cv.enabled` in `_config.yml`. No CV content has been fabricated.
@@ -65,7 +65,7 @@ The public homepage is `https://axmi-28.github.io/`; `/index.html` reaches the s
 
 Dependency versions are locked. Upgrade deliberately, then run the production build and upgrade audits from the README. Two files intentionally override `al_folio_core`:
 
-- `_includes/head.liquid`: upstream head plus the custom stylesheet and one-click theme script.
+- `_includes/head.liquid`: upstream head plus the custom stylesheet and one-click theme script, with the unused Google Fonts request removed.
 - `_includes/header.liquid`: the skip link and standalone theme button, preserving al-folio's `light-toggle` ID.
 
 `.al-folio-overrides.yml` records the versions and checksums you reviewed. After a gem update:

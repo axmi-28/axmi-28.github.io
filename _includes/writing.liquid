@@ -1,0 +1,56 @@
+{% assign writings = site.posts | sort: 'date' | reverse %}
+<section class="home-writing" aria-labelledby="writing">
+  <div class="writing-heading">
+    <h2 id="writing" tabindex="-1">Writings</h2>
+    <a href="{{ '/feed.xml' | relative_url }}">RSS ↗</a>
+  </div>
+  {% if writings.size > 0 %}
+    {% for post in writings %}
+      <article
+        class="writing-article{% if post.kind == 'note' %} writing-note{% endif %}"
+        id="writing-{{ post.slug }}"
+        aria-labelledby="writing-title-{{ post.slug }}"
+      >
+        <header>
+          <div class="essay-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{- post.date | date: '%B %-d, %Y' -}}
+              {% if post.kind == 'note' %} · {{ post.date | date: '%-I:%M %p' }}{% endif %}
+            </time>
+            <a href="{{ post.url | relative_url }}">
+              {%- if post.kind == 'note' %}Open note{% else %}Open article{% endif %} ↗</a
+            >
+            {% if post.source_url %}
+              <a href="{{ post.source_url | escape }}">Substack ↗</a>
+            {% endif %}
+          </div>
+          <h3 class="writing-title" id="writing-title-{{ post.slug }}">
+            {% if post.kind == 'note' %}Brief note{% else %}{{ post.title | escape }}{% endif %}
+          </h3>
+          {% if post.pdf %}
+            <a href="{{ post.pdf | relative_url }}">Read the PDF &rarr;</a>
+          {% endif %}
+        </header>
+        <div class="essay-body">
+          {{
+            post.content
+            | replace: '<h3', '<h4'
+            | replace: '</h3>', '</h4>'
+            | replace: '<h2', '<h4'
+            | replace: '</h2>', '</h4>'
+          }}
+        </div>
+        <nav class="writing-article-nav" aria-label="Navigation after {{ post.title | escape }}">
+          <a href="#writing">&uarr; Writings</a>
+          {% unless forloop.last %}
+            {% assign next_index = forloop.index %}
+            {% assign older_post = writings[next_index] %}
+            <a href="#writing-{{ older_post.slug }}">Next: {{ older_post.title | escape }} &darr;</a>
+          {% endunless %}
+        </nav>
+      </article>
+    {% endfor %}
+  {% else %}
+    <p class="writing-empty">No writings published yet.</p>
+  {% endif %}
+</section>

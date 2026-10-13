@@ -3,12 +3,18 @@ layout: default
 ---
 <div class="post essay">
   <header class="post-header">
-    <a class="back-link" href="{{ '/blog/' | relative_url }}">&larr; Blog</a>
+    <a class="back-link" href="{{ '/' | relative_url }}#writing-{{ page.slug }}">&larr; Writings</a>
     <h1 class="post-title" id="main-content" tabindex="-1">{{ page.title | escape }}</h1>
     <div class="essay-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{- page.date | date: '%B %-d, %Y' -}}
+        {% if page.kind == 'note' %} · {{ page.date | date: '%-I:%M %p' }}{% endif %}
+      </time>
       {% if page.pdf %}
         <a href="{{ page.pdf | relative_url }}">Read the PDF &rarr;</a>
+      {% endif %}
+      {% if page.source_url %}
+        <a href="{{ page.source_url | escape }}">Originally on Substack ↗</a>
       {% endif %}
     </div>
     {% if page.description %}
@@ -18,5 +24,13 @@ layout: default
   <article class="essay-body">
     {{ content }}
   </article>
-  <a class="essay-back" href="{{ '/blog/' | relative_url }}">&larr; All writing</a>
+  <nav class="essay-navigation" aria-label="More writing">
+    {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}">&larr; Older: {{ page.previous.title | escape }}</a>
+    {% endif %}
+    {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}">Newer: {{ page.next.title | escape }} &rarr;</a>
+    {% endif %}
+  </nav>
+  <a class="essay-back" href="{{ '/' | relative_url }}#writing-{{ page.slug }}">&larr; Writings</a>
 </div>
