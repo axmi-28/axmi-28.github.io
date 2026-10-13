@@ -1,6 +1,6 @@
 # Publishing essays and notes
 
-Your writing lives below your bio at **https://axmi-28.github.io/#writing**. Articles unfold in full as visitors scroll, newest first. The dated navigation list jumps directly to each entry, with no extra heading above it. Each entry has a separate page and links to move between older or newer writings. Brief notes share the same stream.
+Your writing lives below your bio at **https://axmi-28.github.io/#writing**. Articles unfold in full as visitors scroll, newest first. The dated navigation list jumps directly to full posts, with no extra heading above it. Each entry has a separate page and links to move between older or newer writings. Brief notes share the same stream.
 
 ## Write an essay locally
 
@@ -101,4 +101,4 @@ The imported articles use `.html` files in `_posts/` to preserve their original 
 
 ## Brief notes
 
-Use `kind: note` in a post’s front matter to display a compact “Brief note” heading on the homepage. Include an explicit `date` with a time and timezone when publishing several notes on the same day; the exact timestamp determines their order. Notes keep their full text, paragraph breaks, and emphasis. A descriptive title such as `Brief note — April 27, 2026, 8:16 PM` identifies the note on its own page, in the RSS feed, and in previous/next links.
+Use `kind: note` in a post’s front matter to display it as untitled writing on the homepage and its own page. Notes are omitted from the top navigation list. Include an explicit `date` with a time and timezone when publishing several notes on the same day; the exact timestamp determines their order. Notes keep their full text, paragraph breaks, and emphasis. A date-only `title` such as `April 27, 2026, 8:16 PM` identifies the note in browser metadata, the RSS feed, and previous/next links; it is not displayed as a heading.

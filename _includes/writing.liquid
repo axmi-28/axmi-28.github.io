@@ -1,33 +1,34 @@
 {% assign writings = site.posts | sort: 'date' | reverse %}
+{% assign indexed_posts = writings | where_exp: 'post', "post.kind != 'note'" %}
 <section class="home-writing" aria-labelledby="writing">
   <div class="writing-heading">
     <h2 id="writing" tabindex="-1">Writings</h2>
     <a href="{{ '/feed.xml' | relative_url }}">RSS ↗</a>
   </div>
   {% if writings.size > 0 %}
-    <nav class="writing-index" aria-label="Writings navigation">
-      <ol>
-        {% for post in writings %}
-          <li class="writing-entry">
-            <time class="writing-date" datetime="{{ post.date | date_to_xmlschema }}">
-              {{- post.date | date: '%b %-d, %Y' -}}
-            </time>
-            <a href="#writing-{{ post.slug }}">
-              {%- if post.kind == 'note' -%}
-                Brief note · {{ post.date | date: '%-I:%M %p' }}
-              {%- else -%}
-                {{ post.title | escape }}
-              {%- endif -%}
-            </a>
-          </li>
-        {% endfor %}
-      </ol>
-    </nav>
+    {% if indexed_posts.size > 0 %}
+      <nav class="writing-index" aria-label="Writings navigation">
+        <ol>
+          {% for post in indexed_posts %}
+            <li class="writing-entry">
+              <time class="writing-date" datetime="{{ post.date | date_to_xmlschema }}">
+                {{- post.date | date: '%b %-d, %Y' -}}
+              </time>
+              <a href="#writing-{{ post.slug }}">{{ post.title | escape }}</a>
+            </li>
+          {% endfor %}
+        </ol>
+      </nav>
+    {% endif %}
     {% for post in writings %}
       <article
         class="writing-article{% if post.kind == 'note' %} writing-note{% endif %}"
         id="writing-{{ post.slug }}"
-        aria-labelledby="writing-title-{{ post.slug }}"
+        {% if post.kind == 'note' %}
+          aria-label="{{ post.date | date: '%B %-d, %Y, %-I:%M %p' }}"
+        {% else %}
+          aria-labelledby="writing-title-{{ post.slug }}"
+        {% endif %}
       >
         <header>
           <div class="essay-meta">
@@ -42,9 +43,9 @@
               <a href="{{ post.source_url | escape }}">Substack ↗</a>
             {% endif %}
           </div>
-          <h3 class="writing-title" id="writing-title-{{ post.slug }}">
-            {% if post.kind == 'note' %}Brief note{% else %}{{ post.title | escape }}{% endif %}
-          </h3>
+          {% unless post.kind == 'note' %}
+            <h3 class="writing-title" id="writing-title-{{ post.slug }}">{{ post.title | escape }}</h3>
+          {% endunless %}
           {% if post.pdf %}
             <a href="{{ post.pdf | relative_url }}">Read the PDF &rarr;</a>
           {% endif %}

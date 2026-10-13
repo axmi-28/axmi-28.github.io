@@ -22,6 +22,6 @@ The three original Notes on [@andystakk’s Activity feed](https://substack.com/
 | 7:43 PM        | [Note 250271024](https://substack.com/@andystakk/note/c-250271024) | 2026-04-28T02:43:49.412Z |
 | 7:37 PM        | [Note 250256935](https://substack.com/@andystakk/note/c-250256935) | 2026-04-28T02:37:42.952Z |
 
-Each note uses `kind: note` and a stable `/notes/2026/<id>/` permalink. Notes appear among the articles in the same newest-first stream; same-day notes are sorted by their exact original timestamps. They have compact “Brief note” headings on the homepage, rather than invented editorial titles.
+Each note uses `kind: note` and a stable `/notes/2026/<id>/` permalink. Notes appear among the articles in the same newest-first stream; same-day notes are sorted by their exact original timestamps. They display their date and full text without a heading, on both the homepage and their individual pages. Only the three full articles appear in the top navigation list.
 
 This is a snapshot of published articles and notes, with no automatic synchronization. `me.MD` remains untouched and excluded from the generated site.
